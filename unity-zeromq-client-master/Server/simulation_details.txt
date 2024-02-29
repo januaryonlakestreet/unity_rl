@@ -1,0 +1,4 @@
+scene_name: #the name of the scene to load.
+agent_name: #name of the prefab agent.
+number_of_agents: #number of agents to run.
+brain_name: # .py file containing agent brain.
