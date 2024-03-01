@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6237C0C2-B032-2091-4B60-5E7833927E20}</ProjectGuid>
+    <ProjectGuid>{6AE56432-1686-FD9D-39C4-23FE995B6086}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>ReqRep</AssemblyName>

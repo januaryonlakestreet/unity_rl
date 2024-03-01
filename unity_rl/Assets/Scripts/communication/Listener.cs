@@ -1,6 +1,8 @@
 ﻿using System;
 using NetMQ;
 using NetMQ.Sockets;
+using UnityEngine;
+
 
 namespace ReqRep
 {
@@ -16,9 +18,10 @@ namespace ReqRep
             _port = port;
             _messageCallback = messageCallback;
         }
-
+        
         public void RequestMessage()
         {
+            int a = UnityEngine.Random.Range(0, 100);
             var messageReceived = false;
             var message = "";
             AsyncIO.ForceDotNet.Force();
@@ -27,7 +30,7 @@ namespace ReqRep
             using (var socket = new RequestSocket())
             {
                 socket.Connect($"tcp://{_host}:{_port}");
-                if (socket.TrySendFrame("start simulation!"))
+                if (socket.TrySendFrame("testing"+a))
                 {
                     messageReceived = socket.TryReceiveFrameString(timeout, out message);
                 }
