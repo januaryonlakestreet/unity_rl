@@ -12,6 +12,7 @@ class Listener:
         if not callable(callback):
             print("call back is not callable")
             return
+
         self.callback = callback
         self.message_queue = multiprocessing.Queue()
         self.listen_process = multiprocessing.Process(target=self.listen,args=(self.callback,))
@@ -22,7 +23,7 @@ class Listener:
         #start stop pause.
         control_words = ["start","stop","pause"]
         if str(message) in control_words:
-            if "start simulation" in str(message):
+            if "start" in str(message):
                 with open("simulation_details.txt", 'r') as file:
                     # Read the entire contents of the file
                     file_contents = file.read()
@@ -44,7 +45,7 @@ class Listener:
             socket.send_string(response)
 
 
-class Env_listener(Listener):
+class env_listener(Listener):
     def __init__(self, callback, host, port):
         super().__init__(callback, host, port)
 

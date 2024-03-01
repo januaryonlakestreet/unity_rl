@@ -1,16 +1,25 @@
-import time
-import random
-import zmq
-import numpy as np
+
 import multiprocessing
 import queue
+import numpy as np
+from Listeners import env_listener,Listener
 
-from Listeners import Env_listener,Listener
+
+class space:
+    def __init__(self,shape,low,high):
+        self.shape = shape
+        self.low = low
+        self.high = high
+
+    def sample(self):
+        return np.random.uniform(self.low, self.high, size=self.shape)
 
 
 class env_base:
     def __init__(self):
-        self.listen = Env_listener(Env_listener.process_message,"*","12344")
+        self.listener = env_listener(env_listener.process_message,"*","12344")
+        self.obs_space = None
+        self.action_space = None
         self.on_start()
 
     def on_start(self):
@@ -18,10 +27,11 @@ class env_base:
 
     def poll_listener(self):
         try:
-            received_message = self.listen.message_queue.get(False)
+            received_message = self.listener.message_queue.get(False)
             return received_message
         except queue.Empty:
             pass
+
 
     def on_step(self):
         while True:
@@ -29,12 +39,14 @@ class env_base:
             if mess != None:
                 print(mess)
 
-
-
-
 if __name__ == '__main__':
 
-    env_ = env_base()
+    obs_space = space("discrete",(3,2,1),-100,100)
+
+    #env_threaded = multiprocessing.Process(target=env_base())
+
+
+    #env_ = env_base()
 
 
     print("listening!")
