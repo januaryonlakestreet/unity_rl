@@ -69,9 +69,7 @@ class env_base:
             if mess != None:
                 print(mess)
 
-            self.episodes -= 1
-            if self.episodes < 0:
-                return
+
 
 
 class basic_env(env_base):
