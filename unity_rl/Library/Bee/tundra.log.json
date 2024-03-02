@@ -207,3 +207,12 @@
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"MovedFromExtractorCombine Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.dll.mvfrm","enqueuedNodeIndex":180,"enqueueingNodeAnnotation":"Csc Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.dll (+2 others)","enqueueingNodeIndex":177}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"WriteText Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.dll.mvfrm.rsp","enqueuedNodeIndex":179,"enqueueingNodeAnnotation":"MovedFromExtractorCombine Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.dll.mvfrm","enqueueingNodeIndex":180}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Updater.pdb","enqueuedNodeIndex":208,"enqueueingNodeAnnotation":"ScriptAssemblies","enqueueingNodeIndex":6}
+{"msg":"nodeRetryBuild","annotation":"Csc Library/Bee/artifacts/1900b0aE.dag/ReqRep.dll (+2 others)","index":119}
+{"msg":"runNodeAction","annotation":"Csc Library/Bee/artifacts/1900b0aE.dag/ReqRep.dll (+2 others)","displayName":"Csc ReqRep","index":119}
+{"msg":"noderesult","processed_node_count":204,"number_of_nodes_ever_queued":208,"annotation":"Csc Library/Bee/artifacts/1900b0aE.dag/ReqRep.dll (+2 others)","index":119,"exitcode":0,"outputfile":"Library\\Bee\\artifacts\\1900b0aE.dag\\ReqRep.dll"}
+{"msg":"inputSignatureChanged","annotation":"CopyFiles Library/ScriptAssemblies/ReqRep.pdb","index":196,"changes":[{"key":"FileList","value":["Library\\Bee\\artifacts\\1900b0aE.dag\\ReqRep.pdb"],"oldvalue":[],"dependency":"explicit"}]}
+{"msg":"runNodeAction","annotation":"CopyFiles Library/ScriptAssemblies/ReqRep.pdb","displayName":"Copying ReqRep.pdb","index":196}
+{"msg":"noderesult","processed_node_count":205,"number_of_nodes_ever_queued":208,"annotation":"CopyFiles Library/ScriptAssemblies/ReqRep.pdb","index":196,"exitcode":0,"outputfile":"Library\\ScriptAssemblies\\ReqRep.pdb"}
+{"msg":"inputSignatureChanged","annotation":"CopyFiles Library/ScriptAssemblies/ReqRep.dll","index":195,"changes":[{"key":"FileList","value":["Library\\Bee\\artifacts\\1900b0aE.dag\\ReqRep.dll"],"oldvalue":[],"dependency":"explicit"}]}
+{"msg":"runNodeAction","annotation":"CopyFiles Library/ScriptAssemblies/ReqRep.dll","displayName":"Copying ReqRep.dll","index":195}
+{"msg":"noderesult","processed_node_count":206,"number_of_nodes_ever_queued":208,"annotation":"CopyFiles Library/ScriptAssemblies/ReqRep.dll","index":195,"exitcode":0,"outputfile":"Library\\ScriptAssemblies\\ReqRep.dll"}
