@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2024-03-02T11:58:47.712Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="jWMyjIAv5GXG7at32ZZH" version="23.1.7" type="device">
+  <diagram name="Page-1" id="Qm_yu5M5WxUvYvguuMmG">
+    <mxGraphModel dx="1434" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-1" target="-Z2bMTCcIalAlCx4_o44-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-12" value="contains" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-Z2bMTCcIalAlCx4_o44-6">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-1" target="-Z2bMTCcIalAlCx4_o44-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-15" value="uses listener class to talk to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-Z2bMTCcIalAlCx4_o44-14">
+          <mxGeometry x="-0.1889" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-1" value="enviro (holds the rules, starts stop overview of agent)&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-2" target="-Z2bMTCcIalAlCx4_o44-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-2" target="-Z2bMTCcIalAlCx4_o44-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-2" target="-Z2bMTCcIalAlCx4_o44-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-17" value="uses listener class to talk to&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="-Z2bMTCcIalAlCx4_o44-16">
+          <mxGeometry x="-0.2875" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-2" value="game object base&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-4" target="-Z2bMTCcIalAlCx4_o44-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-4" value="spaces - generates actions" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-5" value="agent - rl agent&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-13" value="UNITY" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-23" target="-Z2bMTCcIalAlCx4_o44-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-23" value="listener base" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="255" y="595" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-24" target="-Z2bMTCcIalAlCx4_o44-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="-Z2bMTCcIalAlCx4_o44-24" target="-Z2bMTCcIalAlCx4_o44-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-24" value="each thing that needs to communicate to unity needs its own listener class in order to override the process message function" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="520" width="430" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-27" value="enviro listener" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Z2bMTCcIalAlCx4_o44-29" value="game object listener" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

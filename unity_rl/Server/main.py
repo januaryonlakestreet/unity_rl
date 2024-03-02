@@ -5,7 +5,7 @@ import numpy as np
 from torchrl.modules import MLP
 import torch
 
-from Listeners import env_listener,Listener
+from Listeners import env_listener
 
 
 
@@ -85,25 +85,27 @@ class basic_env(env_base):
 
 
 
-class agent:
+class game_object:
     def __init__(self,game_object_name):
-
         self.game_object_name = game_object_name
-        self.brain = MLP(92,92)
 
     def get_transform(self):
         # turns tuple of gameobject transform [location,scale,rotation(euler)]
         pass
+class agent(game_object):
+    def __init__(self,game_object_name):
+        super().__init__(game_object_name)
+
+        self.game_object_name = game_object_name
+        self.brain = MLP(92,92)
+
+
 
 
 
 
 
 if __name__ == '__main__':
-    a_= agent()
-
-
-
     env_threaded = multiprocessing.Process(target=env_base())
 
 
