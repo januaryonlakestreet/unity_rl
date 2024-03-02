@@ -3,8 +3,13 @@ import zmq
 import multiprocessing
 import queue
 
+class asker:
+    #constantly asks unity
+    def __init__(self,callback,message,host="*",port="12345"):
+        pass
 
 class listener:
+    #listens for messages from unity and responds
     def __init__(self, callback, host="*", port="12345"):
         self.host = host
         self.port = port
