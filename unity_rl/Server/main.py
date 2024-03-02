@@ -25,7 +25,8 @@ class env_base:
         self.obs_space = None
         self.action_space = None
         self.on_start()
-        self.episodes = 1000000000000
+        self.episodes = 10000
+        self.episode_length = 100
 
         self.agents = []
         self.agents.append(agent("tmp1"))
@@ -45,6 +46,16 @@ class env_base:
 
         self.on_step()
 
+
+    def register_agents(self):
+        # verifys the unity scene has the agent based on supplied gameobject name
+        #if no removes from list
+        pass
+
+    def get_transform(self,game_object_name):
+        # returns the transfrom of the game object by searching list for agent with right name
+        pass
+
     def poll_listener(self):
         try:
             received_message = self.listener.message_queue.get(False)
@@ -62,9 +73,27 @@ class env_base:
             if self.episodes < 0:
                 return
 
+
+class basic_env(env_base):
+    def __init__(self):
+        super().__init__()
+
+        self.episodes = 1000
+        self.agents.append(agent("tmp1"))
+        self.agents.append(agent("tmp2"))
+
+
+
+
 class agent:
     def __init__(self,game_object_name):
+
+        self.game_object_name = game_object_name
         self.brain = MLP(92,92)
+
+    def get_transform(self):
+        # turns tuple of gameobject transform [location,scale,rotation(euler)]
+        pass
 
 
 
