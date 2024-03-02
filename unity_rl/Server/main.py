@@ -34,6 +34,9 @@ class env_base:
 
 
     def on_start(self):
+        #for agent_idx in range(len(self.agents)):
+         #   agent_name = self.agents[agent_idx].game_object_name
+
         # for each agent
         # ask unity do you have a game object with this name?
         # can the game object send and recv messages?
@@ -104,7 +107,7 @@ class agent(game_object):
 
 
 if __name__ == '__main__':
-    env_threaded = multiprocessing.Process(target=env_base())
+    env_threaded = multiprocessing.Process(target=basic_env())
 
 
     #env_ = env_base()

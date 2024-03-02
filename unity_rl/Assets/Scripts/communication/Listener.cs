@@ -1,7 +1,7 @@
 ﻿using System;
 using NetMQ;
 using NetMQ.Sockets;
-using UnityEngine;
+
 
 
 namespace ReqRep
@@ -21,25 +21,35 @@ namespace ReqRep
         
         public void RequestMessage()
         {
-            int a = UnityEngine.Random.Range(0, 100);
-            var messageReceived = false;
-            var message = "";
-            AsyncIO.ForceDotNet.Force();
-
-            var timeout = new TimeSpan(0, 0, 2);
-            using (var socket = new RequestSocket())
+            while(true)
             {
-                socket.Connect($"tcp://{_host}:{_port}");
-                if (socket.TrySendFrame("testing"+a))
-                {
-                    messageReceived = socket.TryReceiveFrameString(timeout, out message);
-                }
-            }
+                Random r = new Random();
+               
+                var messageReceived = false;
+                var message = "";
+                AsyncIO.ForceDotNet.Force();
 
-            NetMQConfig.Cleanup();
-            if (!messageReceived)
-                message = "Could not receive message from server!";
-            _messageCallback(message);
+                
+                using (var socket = new RequestSocket())
+                {
+                    socket.Connect($"tcp://{_host}:{_port}");
+                    if (socket.TrySendFrame("testing" + r.Next(100)))
+                    {
+                        messageReceived = socket.TryReceiveFrameString(TimeSpan.FromSeconds(120),out message);
+                    }
+                    else
+                    {
+                        message = "cant send message ";
+                    }
+                }
+
+                NetMQConfig.Cleanup();
+                if (!messageReceived)
+                    message = "Could not receive message from server!";
+                _messageCallback(message);
+            }
         }
+
+           
     }
 }

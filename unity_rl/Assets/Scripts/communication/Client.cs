@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Threading;
+using System.Collections.Concurrent;
 
 namespace ReqRep
 {
-    [ExecuteInEditMode]
+  
     public class Client : MonoBehaviour
     {
         [SerializeField] private string host;
         [SerializeField] private string port;
         private Listener _listener;
 
+       
 
        
         private void Start()
         {
             _listener = new Listener(host, port, HandleMessage);
-            EventManager.Instance.onSendRequest.AddListener(OnClientRequest);
+
+            Thread thread = new Thread(_listener.RequestMessage);
+            thread.Start();
         }
 
         private void OnClientRequest()
@@ -28,10 +34,8 @@ namespace ReqRep
         {
             Debug.Log(message);
         }
-        private void Update()
-        {
-            _listener.RequestMessage();
-            print("t");
-        }
+
+       
+
     }
 }

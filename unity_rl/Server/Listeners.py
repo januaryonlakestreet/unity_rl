@@ -39,7 +39,7 @@ class listener:
             message_rx = socket.recv()
             response = callback(self=self, message=message_rx)
             #  do something
-            time.sleep(0.1)
+
             socket.send_string(response)
 
 
