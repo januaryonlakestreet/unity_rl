@@ -33,7 +33,16 @@ class env_base:
         self.agents.append(agent("tmp2"))
 
 
+
     def on_start(self):
+        print("*********************************************************")
+        print("loading enviroment from file")
+        print("expecting X gameobjects")
+        print("found X gameobjects")
+        print("*********************************************************")
+        print("GO!")
+        print("")
+
         #for agent_idx in range(len(self.agents)):
          #   agent_name = self.agents[agent_idx].game_object_name
 
@@ -46,7 +55,7 @@ class env_base:
         # each agent should have own listener
         # port should be env port + agent id
 
-
+        self.listener.ask("hi!")
         self.on_step()
 
 
@@ -68,9 +77,11 @@ class env_base:
 
     def on_step(self):
         while True:
+
             mess = self.poll_listener()
             if mess != None:
                 print(mess)
+
 
 
 
@@ -107,7 +118,7 @@ class agent(game_object):
 
 
 if __name__ == '__main__':
-    env_threaded = multiprocessing.Process(target=basic_env())
+    env_threaded = multiprocessing.Process(target=env_base())
 
 
     #env_ = env_base()

@@ -29,7 +29,6 @@ namespace ReqRep
                 var message = "";
                 AsyncIO.ForceDotNet.Force();
 
-                
                 using (var socket = new RequestSocket())
                 {
                     socket.Connect($"tcp://{_host}:{_port}");
