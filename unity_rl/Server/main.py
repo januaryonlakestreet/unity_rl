@@ -5,7 +5,7 @@ import numpy as np
 from torchrl.modules import MLP
 import torch
 
-from Listeners import env_listener
+from Listeners import env_listener,socket_pool,socket_base
 
 
 
@@ -21,6 +21,11 @@ class space:
 
 class env_base:
     def __init__(self):
+        self.socket_pool = socket_pool()
+        self.socket_pool.add_to_pool(socket_base(port=self.socket_pool.get_port_number(len(self.socket_pool.pool))))
+        self.socket_pool.add_to_pool(socket_base(port=self.socket_pool.get_port_number(len(self.socket_pool.pool))))
+        self.socket_pool.add_to_pool(env_listener(env_listener.process_message,"*",port=self.socket_pool.get_port_number(len(self.socket_pool.pool))))
+
         self.listener = env_listener(env_listener.process_message,"*","12344")
         self.obs_space = None
         self.action_space = None
@@ -55,7 +60,7 @@ class env_base:
         # each agent should have own listener
         # port should be env port + agent id
 
-        self.listener.ask("hi!")
+
         self.on_step()
 
 

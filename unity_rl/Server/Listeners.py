@@ -6,14 +6,14 @@ import queue
 
 class socket_base:
     def __init__(self,host="*",port=""):
-        pass
+        self.port = port
+        self.host = host
 
 class socket_pool:
     def __init__(self,size=0):
         self.pool = []
-        self.pool_start_port = 0
         for _ in range(size):
-            self.pool.append(socket_base())
+            self.pool.append(socket_base(port=self.get_port_number(len(self.pool))))
 
     def acquire(self):
         if self.pool:
@@ -26,40 +26,23 @@ class socket_pool:
 
 
 
-class socket_manager:
-    #manages all sockets
-    #makes sure all ports makes sure no overlap
-    _instance = None
 
-    def __init__(self):
-        self.start_port = 0
+    def add_to_pool(self,socket):
+        self.pool.append(socket)
 
-    def __new__(cls):
-        if cls._instance is None:
-            print('Creating the object')
-            cls._instance = super(socket_manager, cls).__new__(cls)
-            cls.start_port = 0
-        return cls._instance
-
-    def get_new_port_number(self):
-        port = self.start_port
-        port = port + 1
-        self.start_port = port
-        return port
+    def get_port_number(self,number=0):
+        #ether returns the port number or the first valid port
+        for _ in range(len(self.pool)):
+            if self.pool[_].port == number:
+                self.get_port_number(number+1)
+        return number
 
 
 
-
-
-
-
-
-
-
-
-class listener:
+class listener(socket_base):
     #listens for messages from unity and responds
     def __init__(self, callback, host="*", port="12345"):
+        super().__init__(host, port)
         self.host = host
         self.port = port
 
@@ -85,28 +68,6 @@ class listener:
                     return file_contents
         else:
             self.message_queue.put_nowait(message)
-
-    def ask(self,message):
-        self.ask_process = multiprocessing.Process(target=self._ask, args=(self.ask_response,message))
-        self.ask_process.start()
-
-
-    def _ask(self, callback,message):
-        context = zmq.Context()
-        socket = context.socket(zmq.REP)
-        socket.bind(f"tcp://{self.host}:{self.port+1}")
-
-        while True:
-            socket.send_string(message)
-            #  wait request from client
-            message_rx = socket.recv()
-            response = callback(self=self, message=message_rx)
-            print(response)
-
-
-    def ask_response(self,message):
-        print("t")
-        self.ask_process.stop()
 
 
     def listen(self, callback):
