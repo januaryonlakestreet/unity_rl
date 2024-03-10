@@ -4,7 +4,7 @@ import numpy as np
 from torchrl.modules import MLP
 import torch
 
-from Listeners import env_listener
+from Listeners import env_listener,asker
 from object_pool import socket_pool, socket_base
 
 
@@ -26,6 +26,12 @@ class env_base:
                                                   port=self.socket_pool.get_port_number(len(self.socket_pool.pool))))
         self.socket_pool.add_to_pool(env_listener(env_listener.process_message,
                                                   port=self.socket_pool.get_port_number(len(self.socket_pool.pool))))
+
+        self.socket_pool.add_to_pool(asker(asker.process_message,
+                                           port=555))
+
+        #self.socket_pool.add_to_pool(asker(asker.process_message,
+                                                 # port=self.socket_pool.get_port_number(len(self.socket_pool.pool))))
 
         self.listener = self.socket_pool.get_env_listener()
         self.obs_space = None
@@ -108,8 +114,7 @@ class basic_env(env_base):
             mess = self.poll_listener()
             if mess != None:
                 print(mess)
-            else:
-                print("none")
+
 
 
 

@@ -19,7 +19,7 @@ namespace ReqRep
         {
             _listener = new Listener(host, port, HandleMessage);
 
-            Thread thread = new Thread(_listener.RequestMessage);
+            Thread thread = new Thread(_listener._Message);
             thread.Start();
         }
 
